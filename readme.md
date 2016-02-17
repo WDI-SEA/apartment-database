@@ -26,7 +26,7 @@
     * Jane - age 43
     * Add 3 more people (you choose name / age)
 
-* Insert the following properties
+* Insert the following properties (you can pick and choose the property owners)
     * Archstone - 20 units
     * Willowspring - 30 units
     * Add 3 more properties (you choose name / units)
