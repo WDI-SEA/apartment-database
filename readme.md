@@ -1,6 +1,6 @@
-# Apartment lab
+# Apartment Database
 
-- Create a database called `apartmentlab`
+- Create a database called `apartments`
 - Using this database, create two tables, one for owners and one for properties
 - Keep this relationship in mind when designing your schema:
   + **One owner can have many properties**
