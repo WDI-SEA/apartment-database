@@ -33,9 +33,7 @@
 
 ###Part 3: Use Your Database
 
-
 Write down the following sql statements that are required to solve the following tasks.
-
 
 1. Show all the tables.
 * Show all the data in the owners table.
@@ -52,10 +50,9 @@ Write down the following sql statements that are required to solve the following
 * Show the names of the first three owners in your owners table.
 
 
-###Bonus
+###Bonuses
 
 These might require you to look up documentation online
-
 
 1. In the properties table change the name of the column "name" to "property_name".
 * Count the total number of properties where the owner_id is between 1 and 3.
