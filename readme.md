@@ -35,8 +35,7 @@
 
 Write down the following sql statements that are required to solve the following tasks.
 
-1. Show all the tables.
-* Show all the data in the owners table.
+1. Show all the data in the owners table.
 * Show the names of all owners.
 * Show the ages of all of the owners in ascending order.
 * Show the name of an owner whose name is Donald.
@@ -45,17 +44,18 @@ Write down the following sql statements that are required to solve the following
 * Change Jane's age to 30.
 * Change Jane's name to Janet.
 * Delete the owner named Janet.
-* Show all of the properties in alphabetical order that are not named Archstone and do not have an id of 3 or 5.
-* Show the highest age of all owners.
 * Show the names of the first three owners in your owners table.
 
 
 ###Bonuses
 
-These might require you to look up documentation online
+These might require you to look up documentation online, or look at the next section in the notes.
 
 1. In the properties table change the name of the column "name" to "property_name".
 * Count the total number of properties where the owner_id is between 1 and 3.
+* Show all of the properties in alphabetical order that are not named Archstone and do not have an id of 3 or 5.
+* Show the highest age of all owners.
+* Show the name of all owners whose name starts with an E.
 * List all properties sorted by the owners names
 
 
