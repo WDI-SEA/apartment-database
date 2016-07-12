@@ -59,3 +59,9 @@ These might require you to look up documentation online, or look at the next sec
 * List all properties sorted by the owners names
 
 
+
+---
+
+## Licensing
+1. All content is licensed under a CC-BY-NC-SA 4.0 license.
+2. All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
