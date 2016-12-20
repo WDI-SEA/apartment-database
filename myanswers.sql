@@ -77,24 +77,34 @@ VALUES
 
 /////////
 
-SELECT * FROM owners;
+1. SELECT * FROM owners;
 
-SELECT name FROM owners;
+2. SELECT name FROM owners;
 
-SELECT * FROM owners ORDER BY age;
+3. SELECT * FROM owners ORDER BY age;
 
-SELECT * FROM owners WHERE name = 'Donald';
+4. SELECT * FROM owners WHERE name = 'Donald';
 
-SELECT * FROM owners WHERE age > 30;
+5. SELECT * FROM owners WHERE age > 30;
 
-SELECT * FROM owners WHERE name LIKE 'E%';
+6. SELECT * FROM owners WHERE name LIKE 'E%';
 
-UPDATE owners SET age = 30 WHERE name = 'Jane';
+7. UPDATE owners SET age = 30 WHERE name = 'Jane';
 
-UPDATE owners SET name = 'Janet' WHERE id = 3;
+8. UPDATE owners SET name = 'Janet' WHERE id = 3;
 
-DELETE FROM owners WHERE name = 'Janet';
+9. DELETE FROM owners WHERE name = 'Janet';
 
-SELECT * FROM owners LIMIT 3;
+10. SELECT * FROM owners LIMIT 3;
 
 ////// BONUS /////
+
+1. ALTER TABLE ONLY properties RENAME COLUMN name TO property_name;
+
+2. SELECT * FROM properties WHERE owner_id > 0 AND owner_id < 4;
+
+3. SELECT * FROM properties WHERE property_name <> 'ArchStone' AND id <> 3 AND id <> 5 ORDER BY property_name;
+
+4. SELECT age FROM owners ORDER BY age DESC LIMIT 1;
+
+5. SELECT * FROM owners WHERE name LIKE 'E%';
