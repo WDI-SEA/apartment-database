@@ -95,7 +95,7 @@ SELECT * FROM properties WHERE property_name <> 'ArchStone' AND id <> 3 AND id <
 SELECT * FROM owners ORDER BY age DESC LIMIT 1;
 ---------------------------------------------------------
 * Show the name of all owners whose name starts with an E.
-----------------------------------------------------------SELECT * FROM owners WHERE name LIKE 'E%';
+-------------------------------------------------------------SELECT * FROM owners WHERE name LIKE 'E%';
 ----------------------------------------------------------
 * List all properties sorted by the owners names
 
