@@ -35,6 +35,7 @@
 Write down the following sql statements that are required to solve the following tasks.
 
 1. Show all the data in the owners table.
+  * SELECT * FROM owners;
 * Show the names of all owners.
   * SELECT name FROM owners;
 * Show the ages of all of the owners in ascending order.
