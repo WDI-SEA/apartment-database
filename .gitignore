@@ -4,6 +4,8 @@
 node_modules
 .DS_Store
 .DS_Store?
+*.sql
+*.sqlite
 ._*
 .Spotlight-V100
 .Trashes
