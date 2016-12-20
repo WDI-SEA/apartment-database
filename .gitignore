@@ -2,7 +2,6 @@
 *.pid
 *.seed
 node_modules
-*.sql
 *.sqlite
 .DS_Store
 .DS_Store?
