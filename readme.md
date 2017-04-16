@@ -1,11 +1,13 @@
 # Apartment Database
 
 - Create a database called `apartments`
-- Using this database, create two tables, one for owners and one for properties
+- Using this database, create two tables, one for `owner`s and one for `property`s (table names shoud be lowercase and singular)
 - Keep this relationship in mind when designing your schema:
   + **One owner can have many properties**
 
-###Part 1: Create Tables
+### Part 1: Create Tables
+
+Place your answers in `part-1.sql`.
 
 - The owners table should consist of:
   + `id` (this should be the primary key as well as a unique number that increments automatically)
@@ -18,7 +20,9 @@
   + `owner_id` - reference to owner table
     + Remember to create a foreign key constraint that references the owners table
 
-###Part 2: Insert Data
+### Part 2: Insert Data
+
+Place your answers in `part-2.sql`.
 
 * Insert the following owners
     * Donald - age 29
@@ -31,33 +35,31 @@
     * Willowspring - 30 units
     * Add 3 more properties (you choose name / units)
 
-###Part 3: Use Your Database
+### Part 3: Use Your Database
 
-Write down the following sql statements that are required to solve the following tasks.
+Write down the following sql statements that are required to solve the following tasks. Place your answers in `part-3.sql`.
 
 1. Show all the data in the owners table.
-* Show the names of all owners.
-* Show the ages of all of the owners in ascending order.
-* Show the name of an owner whose name is Donald.
-* Show the age of all owners who are older than 30.
-* Show the name of all owners whose name starts with an E.
-* Change Jane's age to 30.
-* Change Jane's name to Janet.
-* Delete the owner named Janet.
-* Show the names of the first three owners in your owners table.
+2. Show the names of all owners.
+3. Show the ages of all of the owners in ascending order.
+4. Show the name of an owner whose name is Donald.
+5. Show the age of all owners who are older than 30.
+6. Show the name of all owners whose name starts with an E.
+7. Change Jane's age to 30.
+8. Change Jane's name to Janet.
+9. Delete the owner named Janet.
+10. Show the names of the first three owners in your owners table.
+11. List all properties sorted by the owners names
+12. Show all of the properties in alphabetical order that are not named Archstone and do not have an id of 3 or 5.
 
-
-###Bonuses
+### Bonuses (attempt at least 2)
 
 These might require you to look up documentation online, or look at the next section in the notes.
 
-1. In the properties table change the name of the column "name" to "property_name".
-* Count the total number of properties where the owner_id is between 1 and 3.
-* Show all of the properties in alphabetical order that are not named Archstone and do not have an id of 3 or 5.
-* Show the highest age of all owners.
-* Show the name of all owners whose name starts with an E.
-* List all properties sorted by the owners names
-
+13. In the properties table change the name of the column "name" to "property_name".
+14. Count the total number of properties where the owner_id is between 1 and 3.
+15. Show the highest age of all owners.
+16. Show the name of all owners whose name starts with an E.
 
 
 ---
