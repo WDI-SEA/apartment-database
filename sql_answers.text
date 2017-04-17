@@ -1,0 +1,70 @@
+PART 1:
+CREATE DATABASE Apartments;
+CREATE TABLE owner (
+id SERIAL PRIMARY KEY,
+name TEXT,
+age INTEGER);
+CREATE TABLE properties (
+id SERIAL PRIMARY KEY,
+name TEXT,
+units INTEGER,
+owner_id INTEGER
+);
+INSERT INTO owner
+(name, age)
+VALUES
+('Donald', 29);
+INSERT INTO owner
+(name, age)
+VALUES
+('John', 33);
+INSERT INTO owner
+(name, age)
+VALUES
+('Jane', 43);
+INSERT INTO owner
+(name, age)
+VALUES
+('Chris', 32);
+INSERT INTO owner
+(name, age)
+VALUES
+('Toby', 30);
+INSERT INTO owner
+(name, age)
+VALUES
+('Donnie', 31);
+
+PART 2:
+INSERT INTO properties
+CTWapple1-# (name, units, owner_id)
+CTWapple1-# VALUES
+CTWapple1-# ('Archstone', 20, 1);
+INSERT INTO properties
+CTWapple1-# (name, units, owner_id)
+CTWapple1-# VALUES
+CTWapple1-# ('Willowspring', 30, 2);
+INSERT INTO properties
+CTWapple1-# (name, units, owner_id)
+CTWapple1-# VALUES
+CTWapple1-# ('Bluspring', 40, 3);
+INSERT INTO properties
+CTWapple1-# (name, units, owner_id)
+CTWapple1-# VALUES
+CTWapple1-# ('Whitesping', 50, 4);
+INSERT INTO properties
+CTWapple1-# (name, units, owner_id)
+CTWapple1-# VALUES
+CTWapple1-# ('Purplespring', 60, 5);
+
+Part3:
+1) SELECT * FROM owner;
+2) SELECT name FROM owner;
+3) SELECT * FROM owner ORDER BY age;
+4) SELECT * FROM owner WHERE name = 'Donald';
+5) SELECT * FROM owner WHERE age > 30;
+6) SELECT * FROM owner WHERE name LIKE 'E%';
+7) UPDATE owner SET age = 30 WHERE name = 'Jane';
+8) UPDATE owner SET name = 'Janet' WHERE name = 'Jane';
+9) DELETE FROM owner WHERE name = 'Janet';
+10) SELECT * FROM owner LIMIT 3;  
