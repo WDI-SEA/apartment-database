@@ -1,0 +1,672 @@
+Last login: Wed Jun 15 11:07:15 on ttys002
+ ChrisMadison@Chriss-MacBook-Pro  ~/code/express-stuff/express-apis-omdb   master ●  psql
+psql (9.5.3)
+Type "help" for help.
+
+ChrisMadison=# \q
+ ChrisMadison@Chriss-MacBook-Pro  ~/code/express-stuff/express-apis-omdb   master ●  psql                                                              
+psql (9.5.3)
+Type "help" for help.
+
+ChrisMadison=# \list
+ChrisMadison=# \dt
+No relations found.
+ChrisMadison=# \?
+ChrisMadison=# 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ChrisMadison=# Create database
+ChrisMadison-# ;
+ERROR:  syntax error at or near ";"
+LINE 2: ;
+        ^
+ChrisMadison=# \list
+ChrisMadison=# create database cohort;
+CREATE DATABASE
+ChrisMadison=# \list
+ChrisMadison=# \conninfo
+You are connected to database "ChrisMadison" as user "ChrisMadison" via socket in "/tmp" at port "5432".
+ChrisMadison=# \connect cohort;
+You are now connected to database "cohort" as user "ChrisMadison".
+cohort=# \conninfor
+Invalid command \conninfor. Try \? for help.
+cohort=# \conninfo
+You are connected to database "cohort" as user "ChrisMadison" via socket in "/tmp" at port "5432".
+cohort=# \dt
+No relations found.
+cohort=# create table developers (
+cohort(# id serial primary key
+cohort(# , name text,
+cohort(# phone varchar(15),
+cohort(# email text);
+CREATE TABLE
+cohort=# \dt
+             List of relations
+ Schema |    Name    | Type  |    Owner     
+--------+------------+-------+--------------
+ public | developers | table | ChrisMadison
+(1 row)
+
+cohort=# \cohort
+Invalid command \cohort. Try \? for help.
+cohort=# [1]    34418 quit       psql
+ ✘ ChrisMadison@Chriss-MacBook-Pro  ~/code/express-stuff/express-apis-omdb   master ●  psql
+psql (9.5.3)
+Type "help" for help.
+
+ChrisMadison=# \q
+ ChrisMadison@Chriss-MacBook-Pro  ~/code/express-stuff/express-apis-omdb   master ●  psq;
+zsh: command not found: psq
+ ✘ ChrisMadison@Chriss-MacBook-Pro  ~/code/express-stuff/express-apis-omdb   master ●  psql
+psql (9.5.3)
+Type "help" for help.
+
+ChrisMadison=# insert into developers
+ChrisMadison-# (name, phone, email)
+ChrisMadison-# values
+ChrisMadison-# ('Chris Madison', '702-606-5967', 'cmadison@gmail.com');
+ERROR:  relation "developers" does not exist
+LINE 1: insert into developers
+                    ^
+ChrisMadison=# \connect cohort                                                            You are now connected to database "cohort" as user "ChrisMadison".
+cohort=# insert into developers                                                           (name, phone, email)                                                                      values                                                                                    ('Chris Madison', '702-606-5967', 'cmadison@gmail.com');
+INSERT 0 1
+cohort=# select * from developers;
+ id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+(1 row)
+
+cohort=# insert into developers                                                           (name, phone, email)                                                                      values                                                                                    ('Chris Madison', '702-606-5967', NULL);
+INSERT 0 1
+cohort=# insert into developers                                                           (name, phone, email)                                                                      values                                                                                    ('Brian Hague', '123-456-789', NULL);
+INSERT 0 1
+cohort=# select name, id from developers;                                                 
+     name      | id 
+---------------+----
+ Chris Madison |  1
+ Chris Madison |  2
+ Brian Hague   |  3
+(3 rows)
+
+cohort=# select * from developers 
+cohort-# where name='Chris Madison';
+ id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+  2 | Chris Madison | 702-606-5967 | 
+(2 rows)
+
+cohort=# select * from developers                                                         where ilike 'chris madison';
+ERROR:  type "ilike" does not exist
+LINE 2: where ilike 'chris madison';
+              ^
+cohort=# select * from developers                                                         where name ilike 'chris madison';
+ id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+  2 | Chris Madison | 702-606-5967 | 
+(2 rows)
+
+cohort=# select * from developers                                                         where name ilike '%madison';
+ id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+  2 | Chris Madison | 702-606-5967 | 
+(2 rows)
+
+cohort=# select * from developers                                                         where name like '%Madison';
+ id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+  2 | Chris Madison | 702-606-5967 | 
+(2 rows)
+
+cohort=# select * from developers                                                         where name ilike '%i%';
+ id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+  2 | Chris Madison | 702-606-5967 | 
+  3 | Brian Hague   | 123-456-789  | 
+(3 rows)
+
+cohort=# select * from developers                                                         where name= 'Chris Madison' and id = 3;
+ id | name | phone | email 
+----+------+-------+-------
+(0 rows)
+
+cohort=# select * from developers                                                         where name= 'Chris Madison' and id = 1;
+ id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+(1 row)
+
+cohort=# select * from developers                                                         where name= 'Chris Madison' or id = 1;
+ id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+  2 | Chris Madison | 702-606-5967 | 
+(2 rows)
+
+cohort=# select * from developers                                                         where name= 'Chris Madison' or id = 3;
+ id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+  2 | Chris Madison | 702-606-5967 | 
+  3 | Brian Hague   | 123-456-789  | 
+(3 rows)
+
+cohort=# select * from developers;
+ id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+  2 | Chris Madison | 702-606-5967 | 
+  3 | Brian Hague   | 123-456-789  | 
+(3 rows)
+
+cohort=# update developers set email = 'cm@hotmail.com'
+cohort-# where id = 2;
+UPDATE 1
+cohort=# select * from developers
+cohort-# order by phone;
+ id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  3 | Brian Hague   | 123-456-789  | 
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+  2 | Chris Madison | 702-606-5967 | cm@hotmail.com
+(3 rows)
+
+cohort=# select * from developers                                                         order by email asc;
+ id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  2 | Chris Madison | 702-606-5967 | cm@hotmail.com
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+  3 | Brian Hague   | 123-456-789  | 
+(3 rows)
+
+cohort=# delete from developers
+cohort-# where name =%Brian%;
+ERROR:  syntax error at or near ";"
+LINE 2: where name =%Brian%;
+                           ^
+cohort=# delete from developers                                                           where name = '%Brian%';
+DELETE 0
+cohort=# select * from developers
+cohort-# where id = '%';
+ERROR:  invalid input syntax for integer: "%"
+LINE 2: where id = '%';
+                   ^
+cohort=# select * from developers                                                         where id = %;
+ERROR:  syntax error at or near "%"
+LINE 2: where id = %;
+                   ^
+cohort=# select * from developers;                                                         id |     name      |    phone     |       email        
+----+---------------+--------------+--------------------
+  1 | Chris Madison | 702-606-5967 | cmadison@gmail.com
+  3 | Brian Hague   | 123-456-789  | 
+  2 | Chris Madison | 702-606-5967 | cm@hotmail.com
+(3 rows)
+
+cohort=# 
+cohort=# create table restaurants (
+cohort(# id serial primary key,
+cohort(# name text;
+cohort(# );
+ERROR:  syntax error at or near ";"
+LINE 3: name text;
+                 ^
+cohort=# create table restaurants (                                                       id serial primary key,                                                                    name text                                                                                 );
+CREATE TABLE
+cohort=# create table staff (
+cohort(# id serial primary key,
+cohort(# name text,
+cohort(# full_time Boolean);
+CREATE TABLE
+cohort=# drop table staff;
+DROP TABLE
+cohort=# create table staff (                                                             id serial primary key,                                                                    name text,                                                                                full_time Boolean,
+cohort(# restaurant_id integer References restaurants
+cohort(# );
+CREATE TABLE
+cohort=# insert into restaurants
+cohort-# (name) values ('olive garden');
+INSERT 0 1
+cohort=# insert into restaurants                                                          (name) values ('cafe petirosso');
+INSERT 0 1
+cohort=# insert into restaurants                                                          (name) values ('pie bar');
+INSERT 0 1
+cohort=# insert into restaurants                                                          (name) values ('dick''s hamburgers');
+INSERT 0 1
+cohort=# select * from restaurants;
+ id |       name        
+----+-------------------
+  1 | olive garden
+  2 | cafe petirosso
+  3 | pie bar
+  4 | dick's hamburgers
+(4 rows)
+
+cohort=# select * from staff;
+ id | name | full_time | restaurant_id 
+----+------+-----------+---------------
+(0 rows)
+
+cohort=# insert into staff (name,
+cohort(# full_time, 
+cohort(# restaurant_id)
+cohort-# values ('olive', true, 1);
+INSERT 0 1
+cohort=# select * from staff;                                                              id | name  | full_time | restaurant_id 
+----+-------+-----------+---------------
+  1 | olive | t         |             1
+(1 row)
+
+cohort=# select * from restaurants
+cohort-# limit 2;
+ id |      name      
+----+----------------
+  1 | olive garden
+  2 | cafe petirosso
+(2 rows)
+
+cohort=# q
+cohort-# q
+cohort-# \q
+ ChrisMadison@Chriss-MacBook-Pro  ~/code/express-stuff/express-apis-omdb   master ●  git add .
+ ChrisMadison@Chriss-MacBook-Pro  ~/code/express-stuff/express-apis-omdb   master ✚  git commit -m "mostly working, but stil a little fuzzy on getting data from APIs and routes."
+[master 24d32d8] mostly working, but stil a little fuzzy on getting data from APIs and routes.
+ 7 files changed, 90 insertions(+), 3 deletions(-)
+ create mode 100644 controllers/flick.js
+ create mode 100644 controllers/search.js
+ create mode 100644 views/flick.ejs
+ create mode 100644 views/layout.ejs
+ create mode 100644 views/movies.ejs
+ ChrisMadison@Chriss-MacBook-Pro  ~/code/express-stuff/express-apis-omdb   master  git push
+Counting objects: 11, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (11/11), 1.85 KiB | 0 bytes/s, done.
+Total 11 (delta 3), reused 0 (delta 0)
+To git@github.com:CMadison/express-apis-omdb.git
+   6e65a4a..24d32d8  master -> master
+ ChrisMadison@Chriss-MacBook-Pro  ~/code/express-stuff/express-apis-omdb   master  
+  [Restored Jun 15, 2016, 12:47:02 PM]
+Last login: Wed Jun 15 12:47:02 on ttys000
+ ChrisMadison@Chriss-MacBook-Pro  ~/code/express-stuff/express-apis-omdb   master  cd ../../
+ ChrisMadison@Chriss-MacBook-Pro  ~/code  psql
+psql (9.5.3)
+Type "help" for help.
+
+ChrisMadison=# \q
+ ChrisMadison@Chriss-MacBook-Pro  ~/code  git clone git@github.com:CMadison/apartment-database.git
+Cloning into 'apartment-database'...
+remote: Counting objects: 16, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 16 (delta 1), reused 0 (delta 0), pack-reused 10
+Receiving objects: 100% (16/16), done.
+Resolving deltas: 100% (3/3), done.
+Checking connectivity... done.
+ ChrisMadison@Chriss-MacBook-Pro  ~/code  cd apa
+cd: no such file or directory: apa
+ ✘ ChrisMadison@Chriss-MacBook-Pro  ~/code  cd apartment-database 
+ ChrisMadison@Chriss-MacBook-Pro  ~/code/apartment-database   master  psql
+psql (9.5.3)
+Type "help" for help.
+
+ChrisMadison=# create database apartments;
+CREATE DATABASE
+ChrisMadison=# \connect apartments
+You are now connected to database "apartments" as user "ChrisMadison".
+apartments=# create table owners, properties;
+ERROR:  syntax error at or near ","
+LINE 1: create table owners, properties;
+                           ^
+apartments=# create table owners;
+ERROR:  syntax error at or near ";"
+LINE 1: create table owners;
+                           ^
+apartments=# create table owners (
+apartments(# id serial primary key,
+apartments(# name varchar
+apartments(# ,
+apartments(# age integer);
+CREATE TABLE
+apartments=# select * from aparatments;
+ERROR:  relation "aparatments" does not exist
+LINE 1: select * from aparatments;
+                      ^
+apartments=# select * from apartments;
+ERROR:  relation "apartments" does not exist
+LINE 1: select * from apartments;
+                      ^
+apartments=# select * from apartments;
+ERROR:  relation "apartments" does not exist
+LINE 1: select * from apartments;
+                      ^
+apartments=# select * from owners;
+ id | name | age 
+----+------+-----
+(0 rows)
+
+apartments=# create table properties (                                                    id serial primary key,                                                                    name varchar,                                                                             units integer,                                                                            apartments(# owners_id);
+ERROR:  syntax error at or near ")"
+LINE 5: owners_id);
+                 ^
+apartments=# create table properties (                                                    id serial primary key,                                                                    name varchar, owner_id,                                                                   units integer);
+ERROR:  syntax error at or near ","
+LINE 3: name varchar, owner_id,
+                              ^
+apartments=# create table properties (                                                    id serial primary key,                                                                    name varchar,                                                                             units integer,                                                                            owners_id integer references owners);
+CREATE TABLE
+apartments=# select * from apartments
+apartments-# ;
+ERROR:  relation "apartments" does not exist
+LINE 1: select * from apartments
+                      ^
+apartments=# select * from owners and properties;
+ERROR:  syntax error at or near "and"
+LINE 1: select * from owners and properties;
+                             ^
+apartments=# select * from owners;
+ id | name | age 
+----+------+-----
+(0 rows)
+
+apartments=# select * from properties;
+ id | name | units | owners_id 
+----+------+-------+-----------
+(0 rows)
+
+apartments=# insert into owners ( name, age) values (
+apartments(# 'Donald', 29), ('John', 33), ('Jane', 43), ('Chris', 27), ('Josh', 33), ('Joe', 30);
+INSERT 0 6
+apartments=# select * from owners;
+ id |  name  | age 
+----+--------+-----
+  1 | Donald |  29
+  2 | John   |  33
+  3 | Jane   |  43
+  4 | Chris  |  27
+  5 | Josh   |  33
+  6 | Joe    |  30
+(6 rows)
+
+apartments=# insert into properties (name, units) values (
+apartments(# 'Archstone', 20), ('Willowspring', 30), ('AVA', 120), ('Motorworks', 180), ('Aspira', 350);
+INSERT 0 5
+apartments=# select * from properties;
+ id |     name     | units | owners_id 
+----+--------------+-------+-----------
+  1 | Archstone    |    20 |          
+  2 | Willowspring |    30 |          
+  3 | AVA          |   120 |          
+  4 | Motorworks   |   180 |          
+  5 | Aspira       |   350 |          
+(5 rows)
+
+apartments=# select * from owners;
+ id |  name  | age 
+----+--------+-----
+  1 | Donald |  29
+  2 | John   |  33
+  3 | Jane   |  43
+  4 | Chris  |  27
+  5 | Josh   |  33
+  6 | Joe    |  30
+(6 rows)
+
+apartments=# select name from owners;
+  name  
+--------
+ Donald
+ John
+ Jane
+ Chris
+ Josh
+ Joe
+(6 rows)
+
+apartments=# select ages from owners
+apartments-# order by asc;
+ERROR:  syntax error at or near "asc"
+LINE 2: order by asc;
+                 ^
+apartments=# select age from owners                                                       order by asc;
+ERROR:  syntax error at or near "asc"
+LINE 2: order by asc;
+                 ^
+apartments=# select age from owners                                                       order by age asc;
+ age 
+-----
+  27
+  29
+  30
+  33
+  33
+  43
+(6 rows)
+
+apartments=# select from owners
+apartments-# value ilike donald;
+ERROR:  syntax error at or near "ilike"
+LINE 2: value ilike donald;
+              ^
+apartments=# select from owners                                                           value ilike 'donald';
+ERROR:  syntax error at or near "ilike"
+LINE 2: value ilike 'donald';
+              ^
+apartments=# select from owners                                                           ilike 'donald';
+ERROR:  syntax error at or near "ilike"
+LINE 2: ilike 'donald';
+        ^
+apartments=# select from owners                                                           where ilike 'donald';
+ERROR:  type "ilike" does not exist
+LINE 2: where ilike 'donald';
+              ^
+apartments=# select from owners                                                           where name ilike 'donald';
+--
+(1 row)
+
+apartments=# select from owners                                                           where name = 'Donald';
+--
+(1 row)
+
+apartments=# select from owners                                                           where name = '%Don%';
+--
+(0 rows)
+
+apartments=# select from owners                                                           where name = '%D%';
+--
+(0 rows)
+
+apartments=# select from owners                                                           where name = 'D%';
+--
+(0 rows)
+
+apartments=# select from owners                                                           where name = '%D';
+--
+(0 rows)
+
+apartments=# select from owners                                                           where name = '%Donald';
+--
+(0 rows)
+
+apartments=# select from owners                                                           where name = 'Donald';
+--
+(1 row)
+
+apartments=# select from owners                                                           where name = 'Dona%';
+--
+(0 rows)
+
+apartments=# select * from owners                                                         where name = 'Dona%';
+ id | name | age 
+----+------+-----
+(0 rows)
+
+apartments=# select * from owners                                                         where name = 'Donald';
+ id |  name  | age 
+----+--------+-----
+  1 | Donald |  29
+(1 row)
+
+apartments=# select * from owners
+apartments-# where age > 30;
+ id | name | age 
+----+------+-----
+  2 | John |  33
+  3 | Jane |  43
+  5 | Josh |  33
+(3 rows)
+
+apartments=# select * from owners                                                         where name = 'E%';
+ id | name | age 
+----+------+-----
+(0 rows)
+
+apartments=# select * from owners                                                         where name = 'D%';
+ id | name | age 
+----+------+-----
+(0 rows)
+
+apartments=# select * from owners                                                         where name = 'J%';
+ id | name | age 
+----+------+-----
+(0 rows)
+
+apartments=# select * from owners                                                         where is 'J%';
+ERROR:  type "is" does not exist
+LINE 2: where is 'J%';
+              ^
+apartments=# select * from owners                                                         where islike 'J%';
+ERROR:  type "islike" does not exist
+LINE 2: where islike 'J%';
+              ^
+apartments=# select * from owners                                                         where is like 'J%';
+ERROR:  syntax error at or near "like"
+LINE 2: where is like 'J%';
+                 ^
+apartments=# select * from owners                                                         where name is like 'J%';
+ERROR:  syntax error at or near "like"
+LINE 2: where name is like 'J%';
+                      ^
+apartments=# select * from owners                                                         where name like 'J%';
+ id | name | age 
+----+------+-----
+  2 | John |  33
+  3 | Jane |  43
+  5 | Josh |  33
+  6 | Joe  |  30
+(4 rows)
+
+apartments=# select * from owners                                                         where name like 'D%';
+ id |  name  | age 
+----+--------+-----
+  1 | Donald |  29
+(1 row)
+
+apartments=# select * from owners                                                         where name like 'E%';
+ id | name | age 
+----+------+-----
+(0 rows)
+
+apartments=# update owner set age = 30
+apartments-# where name = 'Jane';
+ERROR:  relation "owner" does not exist
+LINE 1: update owner set age = 30
+               ^
+apartments=# update owners set age = 30                                                   where name = 'Jane';
+UPDATE 1
+apartments=# select * from owners;                                                         id |  name  | age 
+----+--------+-----
+  1 | Donald |  29
+  2 | John   |  33
+  4 | Chris  |  27
+  5 | Josh   |  33
+  6 | Joe    |  30
+  3 | Jane   |  30
+(6 rows)
+
+apartments=# update owners set name = 'Janet'
+apartments-# where name = 'Jane';
+UPDATE 1
+apartments=# select * from owners;                                                         id |  name  | age 
+----+--------+-----
+  1 | Donald |  29
+  2 | John   |  33
+  4 | Chris  |  27
+  5 | Josh   |  33
+  6 | Joe    |  30
+  3 | Janet  |  30
+(6 rows)
+
+apartments=# delete from owners
+apartments-# where name = 'Janet';
+DELETE 1
+apartments=# select * from owners;                                                         id |  name  | age 
+----+--------+-----
+  1 | Donald |  29
+  2 | John   |  33
+  4 | Chris  |  27
+  5 | Josh   |  33
+  6 | Joe    |  30
+(5 rows)
+
+apartments=# select * from owners
+apartments-# limit 3;
+ id |  name  | age 
+----+--------+-----
+  1 | Donald |  29
+  2 | John   |  33
+  4 | Chris  |  27
+(3 rows)
+
+apartments=# select * from owners                                                         limit 3
+apartments-# sort by id asc;
+ERROR:  syntax error at or near "sort"
+LINE 3: sort by id asc;
+        ^
+apartments=# select * from owners                                                         limit 3                                                                                   order by id asc;
+ERROR:  syntax error at or near "order"
+LINE 3: order by id asc;
+        ^
+apartments=# select * from owners order by id asc limit 3;                                 id |  name  | age 
+----+--------+-----
+  1 | Donald |  29
+  2 | John   |  33
+  4 | Chris  |  27
+(3 rows)
+
+apartments=# 
