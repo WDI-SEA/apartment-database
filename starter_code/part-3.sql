@@ -63,7 +63,3 @@ ALTER TABLE property RENAME COLUMN name TO property_name;
 -- 16. Show the name of all owners whose name starts with an E.
 
 SELECT name FROM owner WHERE name LIKE 'E%';
-
--- #wherestheduck
-
-
