@@ -47,7 +47,7 @@ SELECT * FROM properties ORDER BY name;
 
 -- 12. Show all of the properties in alphabetical order that are not named Archstone and do not have an id of 3 or 5.
 
-
+SELECT * FROM properties WHERE name !='Archstone' AND owner_id !=3 AND  owner_id !=5;
 
 --- Bonuses (attempt at least 2)
 --- These might require you to look up documentation online, or look at the next section in the notes.
@@ -58,11 +58,12 @@ SELECT * FROM properties ORDER BY name;
 
 
 -- 14. Count the total number of properties where the owner_id is between 1 and 3.
-
-SELECT * FROM properties WHERE owner_id BETWEEN 1 and 3;
+SELECT * FROM properties WHERE owners_id BETWEEN 1 and 3;
 
 -- 15. Show the highest age of all owners.
-
+SELECT * FROM owner;
+SELECT COUNT(age) FROM owner;
+SELECT COUNT(DISTINCT age) FROM owner;
 
 
 -- 16. Show the name of all owners whose name starts with an E.
