@@ -24,18 +24,19 @@ SELECT name FROM owners WHERE name LIKE 'E%';
 
 -- 7. Change Jane's age to 30.
 
-UPDATE "public"."owners" SET "age"=30 WHERE "id"=3 RETURNING "id", "name", "age";
+UPDATE "owners" SET "age"=30 WHERE "id"=3 RETURNING "id", "name", "age";
 
 
 -- 8. Change Jane's name to Janet.
-UPDATE "public"."owners" SET "name"='Janet' WHERE "id"=3 RETURNING "id", "name", "age";
+UPDATE "owners" SET "name"='Janet' WHERE "id"=3 RETURNING "id", "name", "age";
 
 
 
 -- 9. Delete the owner named Janet.
 
-UPDATE "public"."owners" SET "name"=NULL WHERE "id"=3 RETURNING "id", "name", "age";
-
+UPDATE "owners" SET "name"=NULL WHERE "id"=3 RETURNING "id", "name", "age";
+DELETE FROM PROPERTIES WHERE owner_id = 3;
+DELETE FROM owners WHERE name = 'jane';
 
 -- 10. Show the names of the first three owners in your owners table.
 SELECT * FROM owners WHERE owners_id < 4;
@@ -58,12 +59,12 @@ SELECT * FROM properties ORDER BY name;
 
 -- 14. Count the total number of properties where the owner_id is between 1 and 3.
 
-
+SELECT * FROM properties WHERE owner_id BETWEEN 1 and 3;
 
 -- 15. Show the highest age of all owners.
 
 
 
 -- 16. Show the name of all owners whose name starts with an E.
-
+SELECT name FROM owners WHERE name LIKE 'E%';
 

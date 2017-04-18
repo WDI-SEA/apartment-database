@@ -10,7 +10,7 @@ VALUES
 ('Satan', 100);
 
 INSERT INTO properties
-(name, units, owner_id)
+(name, units, owners_id)
 VALUES
 ('Archestone', 20, 1),
 ('WillowSpring', 30, 2),

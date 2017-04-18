@@ -1,7 +1,7 @@
 -- Create tables
 CREATE TABLE owners (
 id SERIAL PRIMARY KEY,
-name TEXT
+name TEXT,
 age INTEGER
 );
 
