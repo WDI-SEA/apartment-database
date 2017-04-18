@@ -1,10 +1,10 @@
 -- 1. Show all the data in the owners table.
-
+SELECT * FROM owners;
 
 
 -- 2. Show the names of all owners.
 
-
+SELECT name FROM owners;
 
 -- 3. Show the ages of all of the owners in ascending order.
 
@@ -12,35 +12,37 @@
 
 -- 4. Show the name of an owner whose name is Donald.
 
-
+SELECT * FROM owners WHERE name = 'Donald';
 
 -- 5. Show the age of all owners who are older than 30.
 
-
+SELECT * FROM owners WHERE age > 30;
 
 -- 6. Show the name of all owners whose name starts with an E.
-
+SELECT name FROM owners WHERE name LIKE 'E%';
 
 
 -- 7. Change Jane's age to 30.
 
+UPDATE "public"."owners" SET "age"=30 WHERE "id"=3 RETURNING "id", "name", "age";
 
 
 -- 8. Change Jane's name to Janet.
+UPDATE "public"."owners" SET "name"='Janet' WHERE "id"=3 RETURNING "id", "name", "age";
 
 
 
 -- 9. Delete the owner named Janet.
 
+UPDATE "public"."owners" SET "name"=NULL WHERE "id"=3 RETURNING "id", "name", "age";
 
 
 -- 10. Show the names of the first three owners in your owners table.
-
-
+SELECT * FROM owners WHERE owners_id < 4;
 
 -- 11. List all properties sorted by the owners names
 
-
+SELECT * FROM properties ORDER BY name;
 
 -- 12. Show all of the properties in alphabetical order that are not named Archstone and do not have an id of 3 or 5.
 
