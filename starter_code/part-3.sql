@@ -31,7 +31,7 @@ UPDATE owner SET name='Janet' WHERE name='Jane';
 
 
 -- 9. Delete the owner named Janet.
-DELETE FROM owner WHERE name="Janet";
+DELETE FROM owner WHERE name='Janet';
 
 
 -- 10. Show the names of the first three owners in your owners table.
@@ -39,11 +39,12 @@ SELECT name FROM owner LIMIT 3;
 
 
 -- 11. List all properties sorted by the owners names
-SELECT * FROM owner ORDER BY name ASC;
+SELECT * FROM owner ORDER BY name ASC; --I misread the question.
+--SELECT * FROM property, owner  WHERE property.owner_id = owner.id;
 
 
 -- 12. Show all of the properties in alphabetical order that are not named Archstone and do not have an id of 3 or 5.
-SELECT * FROM property WHERE name !='Archstone' AND id != 3 AND id != 5;
+SELECT property.* FROM property WHERE name !='Archstone' AND id != 3 AND id != 5;
 
 
 --- Bonuses (attempt at least 2)
