@@ -18,7 +18,6 @@ Place your answers in `part-1.sql`.
   + `name` - name of property
   + `units` - number of units
   + `owner_id` - reference to owner table
-    + Remember to create a foreign key constraint that references the owners table
 
 ### Part 2: Insert Data
 
@@ -28,6 +27,9 @@ Place your answers in `part-2.sql`.
     * Donald - age 29
     * John - age 33
     * Jane - age 43
+    * Yuki - Age 67
+    * Erin - Age 21
+    * Siobhan - Age 55
     * Add 3 more people (you choose name / age)
 
 * Insert the following properties (you can pick and choose the property owners)
