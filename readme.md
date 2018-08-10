@@ -34,7 +34,15 @@ Place your answers in `part-2.sql`.
 
 * Insert the following properties (you can pick and choose the property owners)
     * Archstone - 20 units
+    * Zenith Hills - 10 units
     * Willowspring - 30 units
+    * Ridgefield Bay - 5 units
+    * Brookvista - 20 units
+    * Goldendale - 15 units
+    * Green Haven - 40 units
+    * Fair Creek - 35 units
+    * Parkview Pointe - 50 units
+    * Royal Gardens Court - 45 units
     * Add 3 more properties (you choose name / units)
 
 ### Part 3: Use Your Database
