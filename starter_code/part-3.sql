@@ -4,7 +4,7 @@
 
 2. SELECT name FROM owner;
 
-3. SELECT age FROM owner ORDER BY age;
+3. SELECT age FROM owner ORDER BY age ASC;
 
 4. SELECT name FROM owner WHERE name='Donald';
 
@@ -22,12 +22,18 @@
 
 11. SELECT name FROM owner WHERE name LIKE '%a%';
 
-12.
+12. SELECT * FROM peropety WHERE name !='Archstone' AND id NOT IN (3,5);
 
 13. SELECT MAX(age) FROM owner;
 
 14. SELECT MAX(age) FROM owner WHERE age < 30;
 
-15. SELECT COUNT(owner_id) FROM property WHERE owner_id <= 3 AND owner_id >= 1;
+15. SELECT COUNT(unit) FROM property WHERE owner_id BETWEEN 1 AND 3;
 
 --- Bonuses (if attempted)
+
+16. SELECT * FROM property ORDER BY owner_id;
+
+17. ALTER TABLE property RENAME COLUMN name TO property_name;
+
+18. INSERT INTO property (property_name, units, owner_id) VALUES ('Boulders', 60, 3);
