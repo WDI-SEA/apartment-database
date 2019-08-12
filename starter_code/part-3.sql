@@ -28,9 +28,8 @@ SELECT name FROM property WHERE name NOT IN  ('Archstone') AND id NOT IN (3,5) O
 SELECT name FROM owner ORDER BY age DESC LIMIT 1;
 --- 14
 SELECT name FROM owner WHERE (age < 30 AND name NOT LIKE ('%o%')) LIMIT 1;
-
 --- 15
-
+SELECT SUM(property.unit) AS units FROM property WHERE owner_id <= 3;
 --- 16
 
 --- 17
