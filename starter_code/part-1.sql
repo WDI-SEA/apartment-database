@@ -1,2 +1,13 @@
 -- Create tables
 
+CREATE TABLE owner (
+id SERIAL PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+age INT NULL);
+
+CREATE TABLE properties (
+id SERIAL PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+units INT NULL,
+owner_id VARCHAR(100));
+
