@@ -29,7 +29,7 @@ SELECT name FROM owner ORDER BY age DESC LIMIT 1;
 --- 14
 SELECT name FROM owner WHERE (age < 30 AND name NOT LIKE ('%o%')) LIMIT 1;
 --- 15
-SELECT SUM(property.unit) AS units FROM property WHERE owner_id <= 3;
+SELECT SUM(units) AS units FROM property WHERE owner_id <= 3;
 --- 16
 
 --- 17
