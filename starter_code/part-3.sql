@@ -26,11 +26,11 @@ SELECT name FROM owner WHERE name LIKE 'E%';
 UPDATE owner SET age = '30' WHERE name = 'Jane';
 
 -- 8. Change Jane's name to Janet.
--- UPDATE owner SET name = 'Janet' WHERE name = 'Jane';
+UPDATE owner SET name = 'Janet' WHERE name = 'Jane';
 
 --9. Delete owner named Janet
---DELETE FROM property WHERE owner_id = '3';
---DELETE FROM owner WHERE name = 'Janet';
+DELETE FROM property WHERE owner_id = '3';
+DELETE FROM owner WHERE name = 'Janet';
 SELECT * FROM owner;
 
 --10. Show names of first 3 owners
@@ -52,3 +52,15 @@ SELECT age FROM owner WHERE age < 30 AND name LIKE '%o%' ORDER BY age DESC LIMIT
 SELECT * FROM property WHERE owner_id > 1 AND owner_id < 3;
 
 --- Bonuses (if attempted)
+    --List all properties sorted by owner's name
+    SELECT o.name, p.name
+    FROM owner o INNER JOIN property p
+    ON o.id=p.owner_id
+    ORDER BY o.name;
+
+    --In the properties table change the name of the column "name" to "property_name".
+    ALTER TABLE property RENAME COLUMN name TO property_name;
+    SELECT * FROM property
+    
+    -- add new property to owner with id 3
+    INSERT INTO property (name, units, owner_id) VALUES ('Brookhaven', '18', '3');
