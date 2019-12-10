@@ -33,3 +33,18 @@ SELECT age FROM owner WHERE age < 30 AND name LIKE '%o%' LIMIT 1;
 SELECT COUNT(id) FROM property WHERE owner_id > 1 AND owner_id < 3;
 
 --- Bonuses (if attempted)
+
+-- List all properties sorted by the owners names
+-- Need a hint for 16?
+-- Look up the JOIN keyword. This allows you to pull data from two different tables based on fields they have in common.
+SELECT owner.name, property.name FROM owner INNER JOIN property ON owner.id = property.owner_id ORDER BY owner.name;
+
+-- In the properties table change the name of the column "name" to "property_name".
+-- Need a hint for 17?
+-- Look up documentation for ALTER TABLE. This allows you to change the schema (column name in this case).
+ALTER TABLE property RENAME COLUMN name TO property_name;
+
+-- Add a new property to the owner with an id of 3.
+-- Need a hint for 18?
+-- Look up INSERT INTO. Don't forget that the foreign key, `owner_id` needs to exist as an id in the owner table!
+INSERT INTO property(name, units, owner_id) VALUES (Star Platinum, 58, 3);
