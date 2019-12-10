@@ -1,4 +1,4 @@
-\connect apartments;``
+\connect apartments;
 
 INSERT INTO owner (name, age) VALUES('Donald', 29);
 INSERT INTO owner (name, age) VALUES('John', 33);
