@@ -5,7 +5,7 @@ CREATE DATABASE apartments;
 CREATE TABLE owner (
     id SERIAL PRIMARY KEY,
     name TEXT,
-    age VARCHAR
+    age INTEGER
 );
 
 CREATE TABLE property (
