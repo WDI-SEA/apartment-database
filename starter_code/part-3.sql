@@ -20,6 +20,8 @@ UPDATE owners SET age = 30 WHERE name = 'Jane';
 SELECT * FROM properties WHERE owner_id = 3;
 UPDATE properties SET owner_id = 8 WHERE owner_id = 3;
 DELETE FROM owners WHERE name = 'Janet';
+--- can also do a cascading delete to not only delete Janet but her properties too ---
+
 --- 10.
 SELECT name FROM owners LIMIT 3;
 --- 11.
@@ -29,9 +31,11 @@ SELECT * FROM properties WHERE name != 'Archstone' AND id != 3 AND id != 5 ORDER
 --- 13.
 SELECT age FROM owners ORDER BY age DESC LIMIT 1;
 --- 14.
-SELECT age FROM owners WHERE age < 30 AND name LIKE '%o%' LIMIT 1;
+SELECT age FROM owners WHERE age < 30 AND name LIKE '%o%' -- ORDER BY age DESC -- 
+LIMIT 1;
 --- 15.
 SELECT COUNT(properties) FROM properties WHERE owner_id > 1 AND owner_id < 3;
+-- owners.id 
 --- Bonuses (if attempted)
 
 --- 16.
