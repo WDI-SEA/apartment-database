@@ -188,3 +188,24 @@ SELECT COUNT(id) FROM properties WHERE owner_id > 1 AND owner_id < 3;
 -------
      1
 
+List all properties sorted by the owners names
+
+SELECT * FROM properties INNER JOIN owners ON owners.id = properties.owner_id ORDER BY owners.name;
+ id |        name         | units | owner_id | id |  name   | age 
+----+---------------------+-------+----------+----+---------+-----
+  7 | Green Haven         |    40 |        1 |  1 | Donald  |  29
+  3 | Willowspring        |    30 |        9 |  9 | Dwight  |  37
+  1 | Archstone           |    20 |        9 |  9 | Dwight  |  37
+ 10 | Royal Gardens Court |    45 |        9 |  9 | Dwight  |  37
+ 13 | Pewpew Pass         |    20 |        9 |  9 | Dwight  |  37
+  8 | Fair Creek          |    35 |        5 |  5 | Erin    |  21
+ 12 | Jimjim Station      |    69 |        8 |  8 | Jim     |  35
+  6 | Goldendale          |    15 |        8 |  8 | Jim     |  35
+  4 | Ridgefield Bay      |     5 |        2 |  2 | John    |  33
+ 11 | Clarkphart          |     2 |        7 |  7 | Pete    |  23
+  5 | Brookvista          |    20 |        6 |  6 | Siobhan |  55
+  9 | Parkview Pointe     |    50 |        4 |  4 | Yuki    |  67
+(12 rows)
+
+
+In the properties table change the name of the column "name" to "property_name".
