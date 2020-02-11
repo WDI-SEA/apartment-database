@@ -33,3 +33,11 @@ SELECT age FROM owners WHERE age < 30 AND name LIKE '%o%' LIMIT 1;
 --- 15.
 SELECT COUNT(properties) FROM properties WHERE owner_id > 1 AND owner_id < 3;
 --- Bonuses (if attempted)
+
+--- 16.
+SELECT o.name, p.name FROM owners o INNER JOIN properties p ON o.id = p.owner_id ORDER BY o.name;
+--- 17.
+ALTER TABLE properties RENAME COLUMN name TO property_name;
+--- 18.
+INSERT INTO owners (name, id, age) VALUES ('Janice', 3, 45);
+INSERT INTO properties (property_name, units, owner_id) VALUES ('Ridgewood', 14, 3);
