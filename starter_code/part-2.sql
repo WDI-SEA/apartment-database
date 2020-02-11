@@ -41,8 +41,8 @@ apartments-# ;
 apartments=# SELECT * FROM properties;
  id |        name         | units | owner_id 
 ----+---------------------+-------+----------
-  1 | Archstone           |    20 | 7
-  2 | Zenith Hills        |    10 | 7
+  1 | Archstone           |    20 | 8
+  2 | Zenith Hills        |    10 | 9
   3 | Willowspring        |    30 | 7
   4 | Ridgefield Bay      |     5 | 7
   5 | Brookvista          |    20 | 7

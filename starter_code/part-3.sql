@@ -46,6 +46,9 @@ SELECT age FROM owners WHERE age < 30 AND name LIKE '%o%' ORDER BY age DESC LIMI
 -- Count the total number of properties where the owner_id is between 1 and 3.
 SELECT COUNT(*) FROM properties WHERE owner_id <4;
 
+
+
+
 -- Bonuses
 -- List all properties sorted by the owners names
 SELECT * FROM properties                                   
@@ -55,7 +58,6 @@ ORDER BY owners.name;
 -- In the properties table change the name of the column "name" to "property_name".
 ALTER TABLE properties
 RENAME COLUMN name TO property_name;
-
 
 -- Add a new property to the owner with an id of 3.
 INSERT INTO properties(property_name, units, owner_id) VALUES('Royal Palace of Dorne', 35, 3); 
