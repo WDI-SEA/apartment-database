@@ -4,6 +4,15 @@
 - Using this database, create two tables, one for `owner`s and one for `property`s (table names shoud be lowercase and plural)
 - Keep this relationship in mind when designing your schema:
   + **One owner can have many properties**
+  
+## Deliverable
+
+* Fork and clone this as normal
+* We don't have or need access to your local database - that's just for you to test it and come up with the right query! So, in order to turn this assignment in, put your SQL queries into `part-1.sql`, `part-2.sql`, and `part-3.sql` which can be found in the `starter-code` folder. 
+  * Your process will likely be running your query, and once it works, copying it into the appropriate file in the starter-code directory
+* Add, commit, and push your changes
+* Make a pull request!
+* Relax 😎
 
 ### Part 1: Create Tables
 
