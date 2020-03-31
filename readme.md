@@ -12,7 +12,7 @@
   * Your process will likely be running your query, and once it works, copying it into the appropriate file in the starter-code directory
 * Add, commit, and push your changes
 * Make a pull request!
-* Relax 😎
+* Relax! 😎
 
 ### Part 1: Create Tables
 
@@ -76,7 +76,7 @@ Write down the following sql statements that are required to solve the following
 
 ### Bonuses 
 
-These might require you to look up documentation online, or look at the next section in the notes.
+These might require you to *look up documentation online*, or look at the next section in the notes. This is a bonus after all, so we're getting a little bit ahead!
 
 16. List all properties sorted by the owners names 
 17. In the properties table change the name of the column "name" to "property_name".
