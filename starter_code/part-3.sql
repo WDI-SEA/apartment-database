@@ -25,6 +25,7 @@ UPDATE owner SET age = 30 WHERE name = 'Jane';
 UPDATE owner SET name = 'Janet' WHERE name = 'Jane';
 
 --- 9.
+DELETE FROM property WHERE owner_id = 3;
 DELETE FROM owner WHERE name = 'Janet';
 
 --- 10.
