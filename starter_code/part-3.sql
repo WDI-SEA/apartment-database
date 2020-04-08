@@ -26,7 +26,7 @@ SELECT name FROM owner LIMIT 3;
 SELECT name from owner WHERE name LIKE '%a%';
 ---12.
 SELECT * from property WHERE name NOT IN ('Archstone') AND owner_id NOT IN (3, 5) ORDER BY name ASC;
-SELECT * from property WHERE name != 'Archstone' AND owner_id != 3 AND owner_id != 5 ORDER BY name ASC;
+SELECT * from property WHERE name != 'Archstone' AND owner_id != 3 OR owner_id != 5 ORDER BY name ASC;
 --13. 
 SELECT MAX(age)from owner;
 ---14.
