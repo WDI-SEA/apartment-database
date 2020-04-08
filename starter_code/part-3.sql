@@ -7,9 +7,9 @@
   4 | Yuki       |  67
   5 | Erin       |  21
   6 | Siobhan    |  55
-  7 | Methuselah | 969
-  8 | Socrates   |  71
-  9 | Fyodor     |  60
+  7 | abby       |  90
+  8 | will       |  30
+  9 | sam        |  17
 (9 rows)
 
 2.samhawkins=# select * from properties                                                                         ;
@@ -25,9 +25,9 @@
   8 | Fair Creek          |    35 |        4
   9 | Parkview Pointe     |    50 |        6
  10 | Royal Gardens Court |    45 |        3
- 11 | Mar a Lago          |   126 |        1
- 12 | Hemlock Court       |   500 |        8
- 13 | Katorga             |    49 |        9
+ 11 | seattle             |    30 |        3
+ 12 | willows crest       |    40 |        8
+ 13 | Love Park           |    39 |        7
 (13 rows)
 
 3.samhawkins=# SELECT age FROM owners ORDER BY age ASC;
@@ -41,7 +41,7 @@
   60
   67
   71
- 969
+  90
 (9 rows)
 
 samhawkins=# SELECT owner FROM owners WHERE name = 'Donald';
@@ -108,8 +108,8 @@ samhawkins-# ;
 ------------
  Donald
  Siobhan
- Methuselah
- Socrates
+ sam
+ abby
  Janet
 (5 rows)
 
@@ -119,9 +119,9 @@ samhawkins-# ;
   8 | Fair Creek          |    35 |        4
   6 | Goldendale          |    15 |        4
   7 | Green Haven         |    40 |        1
- 12 | Hemlock Court       |   500 |        8
+ 12 | willows crest       |    40 |        8
  13 | Katorga             |    49 |        9
- 11 | Mar a Lago          |   126 |        1
+ 11 | seattle             |    30 |        3
   9 | Parkview Pointe     |    50 |        6
   4 | Ridgefield Bay      |     5 |        1
  10 | Royal Gardens Court |    45 |        3
@@ -131,7 +131,7 @@ samhawkins-# ;
 13.samhawkins=# SELECT max(age) FROM owners;
  max
 -----
- 969
+ 90
 (1 row)
 
 14.samhawkins=# SELECT max(age) FROM owners WHERE age < 30 AND name LIKE '%o%' LIMIT 1;

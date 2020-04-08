@@ -12,25 +12,26 @@ samhawkins=# INSERT INTO properties (name, units, owner_id) VALUES ('Parkview Po
 INSERT 0 1
 samhawkins=# INSERT INTO properties (name, units, owner_id) VALUES ('Royal Gardens Court', '45', 3);
 INSERT 0 1
-samhawkins=# INSERT INTO properties (name, units, owner_id) VALUES ('Mar a Lago', '126', 1);
+samhawkins=# INSERT INTO properties (name, units, owner_id) VALUES ('seattle', '30', 3);
 INSERT 0 1
-samhawkins=# INSERT INTO properties (name, units, owner_id) VALUES ('Hemlock Court', '500', 8);
+samhawkins=# INSERT INTO properties (name, units, owner_id) VALUES ('willows crest', '40', 8);
 INSERT 0 1
-samhawkins=# INSERT INTO properties (name, units, owner_id) VALUES ('Katorga', '49', 9);
+samhawkins=# INSERT INTO properties (name, units, owner_id) VALUES ('Love Park', '39', 7);
 INSERT 0 1
 samhawkins=#
 samhawkins=# select * from owners                                                                             ;
- id |    name    | age
+
+id |    name    | age
 ----+------------+-----
-  1 | Donald     |  29
-  2 | John       |  33
-  3 | Jane       |  43
-  4 | Yuki       |  67
-  5 | Erin       |  21
-  6 | Siobhan    |  55
-  7 | Methuselah | 969
-  8 | Socrates   |  71
-  9 | Fyodor     |  60
+ 1 | Donald     |  29
+ 2 | John       |  33
+ 3 | Jane       |  43
+ 4 | Yuki       |  67
+ 5 | Erin       |  21
+ 6 | Siobhan    |  55
+ 7 | abby       |  90
+ 8 | will       |  30
+ 9 | sam        |  17
 (9 rows)
 
 samhawkins=# select * from properties                                                                         ;
@@ -46,9 +47,9 @@ samhawkins=# select * from properties                                           
   8 | Fair Creek          |    35 |        4
   9 | Parkview Pointe     |    50 |        6
  10 | Royal Gardens Court |    45 |        3
- 11 | Mar a Lago          |   126 |        1
- 12 | Hemlock Court       |   500 |        8
- 13 | Katorga             |    49 |        9
+ 11 | seattle             |    30 |        3
+ 12 | willows crest       |    40 |        8
+ 13 | Love Park           |    39 |        7
 (13 rows)
 
-samhawkins=# 
+samhawkins=#
