@@ -22,6 +22,8 @@ Place your answers in `part-1.sql`.
   + `id` (this should be the primary key as well as a unique number that increments automatically)
   + `name` - name of owner
   + `age` - age of owner
+
+
 - The properties table should consist of:
   + `id` (this should be the primary key as well as a unique number that increments automatically)
   + `name` - name of property
