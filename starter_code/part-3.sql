@@ -2,7 +2,6 @@
 
 --- 1.
 SELECT * FROM owner;
-
 --- 2. 
 SELECT name FROM owner;
 --- 3.
@@ -16,9 +15,9 @@ SELECT name FROM owner WHERE age > 30;
 SELECT name FROM owner WHERE name LIKE 'E%';
 ---7. 
 UPDATE owner SET age = 30 WHERE name = 'Jane';
----8. This one violates foreign key constraints, so I didn't go through with it.
+---8. 
 UPDATE owner SET name = 'Janet' WHERE name = 'Jane';
----9.
+---9. This one violates foreign key constraints, so I didn't go through with it.
 DELETE FROM owner WHERE name = 'Janet';
 ---10.
 SELECT name FROM owner LIMIT 3;
