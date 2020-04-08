@@ -1,2 +1,3 @@
--- Insert Data
-
+-- Insert DataINSERT INTO owner
+INSERT INTO owners (name, age) VALUES ('John', '33'), ('Jane', '43'), ('Yuki', '67'), ('Erin', '21'), ('Siobhan', '55'), ('Sam', '24'), ('Sharon', '28'), ('Royce', '27');
+INSERT INTO properties (name, units) VALUES ('Archstone', '20'), ('Zenith Hills', '10'), ('Willowspring', '30'), ('Ridgefield Bay', '5'), ('Brookvista', '20'), ('Goldendale', '15'), ('Green Haven', '40'), ('Fair Creek', '35'), ('Parkview Pointe', '50'), ('Royal Gardens Court', '45');

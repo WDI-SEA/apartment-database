@@ -1,2 +1,17 @@
 -- Create tables
+-- CREATE DATABASE apartments;
+-- SamYi=# \connect apartments
+-- You are now connected to database "apartments" as user "SamYi".
+-- apartments=# CREATE TABLE owners (
+-- apartments(# id SERIAL PRIMARY KEY 
+-- apartments(# ,
+-- apartments(# name TEXT,
+-- apartments(# age VARCHAR(2)
+-- apartments(# );
 
+-- apartments=# CREATE TABLE properties (
+-- apartments(# id SERIAL PRIMARY KEY, 
+-- apartments(# name TEXT,
+-- apartments(# units VARCHAR (3),
+-- apartments(# owner_id INT references owners(id)
+-- apartments(# );
