@@ -24,6 +24,13 @@ WHERE name = "Jane";
 -- Delete the owner named Janet.
 DELETE from owner
 WHERE name = 'Janet';
+
+ERROR:  update or delete on table "owner" violates foreign key constraint "property_owner_id_fkey" on table "property"
+DETAIL:  Key (id)=(3) is still referenced from table "property".
+
+Cant delete Janet because her id is referenced in property table, therefore if I delete janet it may delete her properties
+
+
 -- Show the names of the first three owners in your owners table.
 SELECT name FROM owner LIMIT 3;
 -- Show the name of all owners whose name contains an a.
@@ -50,7 +57,13 @@ WHERE owner_id BETWEEN 1 AND 3;
 --- Bonuses (if attempted)
 
 -- List all properties sorted by the owners names
+SELECT * FROM property
+INNER JOIN owner ON property.owner_id = owner_id;
 
 -- In the properties table change the name of the column "name" to "property_name".
+ALTER TABLE property
+RENAME COLUMN name TO property_name;
 
 -- Add a new property to the owner with an id of 3.
+INSERT INTO property (property_name, units, owner_id)
+VALUES ('Elinia', 15, 1);

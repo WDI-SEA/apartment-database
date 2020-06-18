@@ -1,5 +1,5 @@
 -- Insert Data
-INSERT INTO owner (name, age)VALUES 
+INSERT INTO owner (name, age) VALUES 
 ('Donald',29),
 ('John',33),
 ('Jane',43),
