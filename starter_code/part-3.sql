@@ -25,8 +25,8 @@ WHERE name = "Jane";
 DELETE from owner
 WHERE name = 'Janet';
 
-ERROR:  update or delete on table "owner" violates foreign key constraint "property_owner_id_fkey" on table "property"
-DETAIL:  Key (id)=(3) is still referenced from table "property".
+-- ERROR:  update or delete on table "owner" violates foreign key constraint "property_owner_id_fkey" on table "property"
+-- DETAIL:  Key (id)=(3) is still referenced from table "property".
 
 -- Cant delete Janet because her id is referenced in property table, therefore if I delete janet it may delete her properties
 
