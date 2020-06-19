@@ -1,16 +1,16 @@
 # Apartment Database
 
 - Create a database called `apartments`
-- Using this database, create two tables, one for `owner`s and one for `property`s (table names shoud be lowercase and plural)
+- Using this database, create two tables, one for `owners` and one for `properties` (table names shoud be lowercase and plural)
 - Keep this relationship in mind when designing your schema:
   + **One owner can have many properties**
   
 ## Deliverable
 
 * Fork and clone this as normal
-* We don't have or need access to your local database - that's just for you to test it and come up with the right query! So, in order to turn this assignment in, put your SQL queries into `part-1.sql`, `part-2.sql`, and `part-3.sql` which can be found in the `starter-code` folder. 
-  * Your process will likely be running your query, and once it works, copying it into the appropriate file in the starter-code directory
-* Add, commit, and push your changes
+* In order to turn this assignment in, put your SQL commands into `part-1.sql`, `part-2.sql`, and `part-3.sql` which can be found in the `starter-code` folder. 
+  * Your process will likely be writing your command in the relevant file, and then copying it and pasting it in your `psql` shell. If it doesn't work, you can edit it in your IDE and try again.
+* Add, commit, and push your changes when you finish each part
 * Make a pull request!
 * Relax! 😎
 
@@ -18,11 +18,11 @@
 
 Place your answers in `part-1.sql`.
 
-- The owners table should consist of:
+- Create a table called `owners`. This owners table should consist of:
   + `id` (this should be the primary key as well as a unique number that increments automatically)
   + `name` - name of owner
   + `age` - age of owner
-- The properties table should consist of:
+- Create a `properties` table which should consist of:
   + `id` (this should be the primary key as well as a unique number that increments automatically)
   + `name` - name of property
   + `units` - number of units
@@ -52,7 +52,7 @@ Place your answers in `part-2.sql`.
     * Fair Creek - 35 units
     * Parkview Pointe - 50 units
     * Royal Gardens Court - 45 units
-    * Add 3 more properties (you choose name / units)
+    * Add 3 more properties (you choose name / units / property owners)
 
 ### Part 3: Use Your Database
 
