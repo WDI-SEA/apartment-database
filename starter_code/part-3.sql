@@ -34,7 +34,11 @@ SELECT COUNT (owner_id) FROM properties WHERE owner_id IN (1,2,3);
 -- BONUSES
 
 -- 16. List all properties sorted by the owners names 
-
+SELECT owners.name, properties.name
+FROM owners INNER JOIN properties
+ON owners.id = properties.owner_id;
 -- 17. In the properties table change the name of the column "name" to "property_name".
-
+ALTER TABLE properties RENAME COLUMN "name" TO "property_name";
 -- 18. Add a new property to the owner with an id of 3.
+INSERT INTO properties(property_name, units, owner_id) VALUES ('Satans Hole', 30, 3);
+-- I'm not sure if this is what you're asking. If it is, cool. If not, I'm sorry, I was confused...
