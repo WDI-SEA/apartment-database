@@ -17,15 +17,16 @@ UPDATE owners SET age = 30 WHERE name = 'Jane';
 -- 8. Change Jane's name to Janet.
 UPDATE owners SET name = 'Janet' WHERE name = 'Jane';
 -- 9. Delete the owner named Janet.
-
+DELETE FROM owners WHERE name = 'Janet';
+    -- I'm guessing this is where the error gets thrown because I can't delete Janet since she's linked to property management and that would mess with all the owner_id's that are tied to both her and the specific properties. 
 -- 10. Show the names of the first three owners in your owners table.
-
+SELECT name FROM owners LIMIT 3;
 -- 11. Show the name of all owners whose name contains an `a`.
-
+SELECT name FROM owners where name LIKE '%a%';
 -- 12. Show all of the properties in alphabetical order that are not named Archstone and do not have an id of 3 or 5.
-
+SELECT name FROM properties WHERE name NOT IN ('Archstone') ORDER BY name;
 -- 13. Show the highest age of all owners.
-
+SELECT age FROM owners ORDER BY age DESC LIMIT 1;
 -- 14. Show the highest age of owners who are under 30 and whose name contains an `o`. Limit to one result.
 
 -- 15. Count the total number of properties where the owner_id is between 1 and 3.
