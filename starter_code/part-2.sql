@@ -29,7 +29,6 @@ INSERT INTO owners (name, age)
 VALUES ('A Magic Talking Dog', 4);
 
 -- apartments
-
 INSERT INTO properties (name, units, owner_id) 
  VALUES ('Archstone', 20);
 
