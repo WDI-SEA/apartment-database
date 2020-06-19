@@ -29,10 +29,10 @@ DELETE FROM property WHERE owner_id = 3;
 DELETE FROM owners WHERE name = 'Janet';
 
 --- 10.
-SELECT name FROM owners WHERE name LIKE '%a%'
+SELECT name FROM owners LIMIT 3;
 
 --- 11. 
-SELECT name FROM owners LIMIT 3;
+SELECT name FROM owners WHERE name LIKE '%a%'
 
 --- 12.
 SELECT * FROM property WHERE name NOT IN ('Archstone') AND id NOT IN (3, 5) ORDER BY property ASC;
@@ -46,7 +46,7 @@ SELECT max(age) FROM owners WHERE age <= '30' HAVING name LIKE '%o%' LIMIT 1;
 --- 15.
 SELECT COUNT (*) owner_id FROM property WHERE owner_id <= 3;
 
---- Bonuses (if attempted)
+--- Bonuses 
 --- 16.
 SELECT * FROM properties INNER JOIN owners ON property.owner_id = owners.id;
 SELECT * FROM owner o JOIN property p ON o.id = p.owner_id ORDER BY o.name ASC;
