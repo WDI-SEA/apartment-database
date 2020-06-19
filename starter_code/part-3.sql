@@ -35,18 +35,16 @@ apartments=# SELECT name FROM owners LIMIT 3;
 apartments=# SELECT * FROM owners WHERE name LIKE '%a%';
 
 -- 12. Show all of the properties in alphabetical order that are not named Archstone and do not have an id of 3 or 5.
-apartments=# SELECT * FROM properties WHERE name NOT IN ('Archstone') OR id NOT IN (3, 5) ORDER BY name DESC;
-
---I did this but it is not correct, so I need to go to TA hours in the morning for help. 
+apartments=# SELECT * FROM properties WHERE NOT name = ('Archstone') AND id NOT IN (3, 5) ORDER BY name;
 
 -- 13. Show the highest age of all owners.
-apartments=# SELECT max(age) from owners;
+apartments=# SELECT MAX(age) FROM owners DESC LIMIT 1;
 
 -- 14. Show the highest age of owners who are under 30 and whose name contains an `o`. Limit to one result.
-apartments=# SELECT max(age) from owners WHERE age < 30 AND name LIKE '%o%' LIMIT 1;
+apartments=# SELECT MAX(age) FROM owners WHERE age < 30 AND name LIKE '%o%' LIMIT 1;
 
 -- 15. Count the total number of properties where the owner_id is between 1 and 3.
-
+SELECT COUNT(*) FROM properties WHERE id = 2;
 -- BONUSES
 
 -- 16. List all properties sorted by the owners names 
