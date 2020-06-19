@@ -24,13 +24,13 @@ SELECT name FROM owners LIMIT 3;
 -- 11. Show the name of all owners whose name contains an `a`.
 SELECT name FROM owners where name LIKE '%a%';
 -- 12. Show all of the properties in alphabetical order that are not named Archstone and do not have an id of 3 or 5.
-SELECT name FROM properties WHERE name NOT IN ('Archstone') ORDER BY name;
+SELECT name, id  FROM properties WHERE name NOT IN ('Archstone') AND id NOT IN (3,5)  ORDER BY name;
 -- 13. Show the highest age of all owners.
 SELECT age FROM owners ORDER BY age DESC LIMIT 1;
 -- 14. Show the highest age of owners who are under 30 and whose name contains an `o`. Limit to one result.
-
+SELECT age, name FROM owners WHERE age < 30 AND name LIKE '%o%'  ORDER BY age LIMIT 1;
 -- 15. Count the total number of properties where the owner_id is between 1 and 3.
-
+SELECT COUNT (owner_id) FROM properties WHERE owner_id IN (1,2,3);
 -- BONUSES
 
 -- 16. List all properties sorted by the owners names 
