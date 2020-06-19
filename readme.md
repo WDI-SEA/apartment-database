@@ -1,7 +1,7 @@
 # Apartment Database
 
 - Create a database called `apartments`
-- Using this database, create two tables, one for `owners` and one for `properties` (table names shoud be lowercase and plural)
+- Using this database, create two tables, one for `owners` and one for `properties` (table names should be lowercase and plural)
 - Keep this relationship in mind when designing your schema:
   + **One owner can have many properties**
   
