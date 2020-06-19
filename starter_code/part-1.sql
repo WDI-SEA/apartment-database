@@ -14,3 +14,4 @@ CREATE TABLE properties (
     owner_id INTEGER,
     FOREIGN KEY (owner_id) REFERENCES owners(id)
 );
+
