@@ -1,5 +1,6 @@
 --- Answers for Questions
 
+--- 1.
 -- Show all the data in the owners table.
 SELECT * FROM owner;
 -- Show the names of all owners.
@@ -25,9 +26,11 @@ WHERE name = "Jane";
 DELETE from owner
 WHERE name = 'Janet';
 
+--- 2. 
 -- ERROR:  update or delete on table "owner" violates foreign key constraint "property_owner_id_fkey" on table "property"
 -- DETAIL:  Key (id)=(3) is still referenced from table "property".
 
+--- etc...
 -- Cant delete Janet because her id is referenced in property table, therefore if I delete janet it may delete her properties
 
 
